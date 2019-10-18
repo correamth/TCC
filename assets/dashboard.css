@@ -1,0 +1,37 @@
+.home{
+width: 100%;
+min-height: 100%;
+height: auto;
+background-color: #f5f5f5;
+position: absolute;
+padding-top:100px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.home .row{
+margin: 0px;
+}
+.borda{
+border-width:1px; border-color:black; border-style:inset; height:30px;
+
+}
+.card {
+width: 20rem;
+}
+.peb{
+filter:grayscale(100%);	
+}
+.disabledevents{
+pointer-events: none;
+cursor: default;
+text-decoration: none;
+}
+.starok{
+color:orange;
+}
+.danone{
+	display: none!important;
+}
+
