@@ -1,4 +1,8 @@
 
+@media (max-width: 396px){
+.navbar-brand {
+font-size:15px;
+}}
 @media (min-width: 576px){
 .card-columns {
     -webkit-column-count: 3;
