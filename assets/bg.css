@@ -1,0 +1,10 @@
+body {
+	--cor1: red;
+	--cor2: red;
+	--cor3: red;
+	background: linear-gradient(75deg, var(--cor1), var(--cor2), var(--cor3));
+	margin:0px! important;
+}
+img{
+	position: fixed;
+}
