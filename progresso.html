@@ -345,27 +345,30 @@
         return document.getElementsByName(elemento);
       }
 
-      if (localStorage.getItem("progresso") == null) {
-        localStorage.setItem(
-          "progresso",
-          "0,0,0;0,0,0;0,0,0;0,0,0;0,0,0;0,0,0"
-        );
-      } else {
-        var progresso = localStorage.getItem("progresso");
-      }
+	 if (JSON.parse(localStorage.getItem('fasesProgesso')) == null)  {
+		var fasesProgesso = {
+			lvl1: "0,0,0",
+			lvl2: "0,0,0",
+			lvl3: "0,0,0",
+			lvl4: "0,0,0",
+			lvl5: "0,0,0",
+			lvl6: "0,0,0"
+		}
+		localStorage.setItem('fasesProgesso',JSON.stringify(fasesProgesso))
+	}
+	var verJson = JSON.parse(localStorage.getItem('fasesProgesso')) 
 
-      var progressoSplit = progresso.split(";");
-      console.log(progressoSplit);
-
-      for (s = 0; s < 6; s++) {
-        var cardAtualStar = nameE("estrelinhas")[s];
-        var verificaStar = progressoSplit[s].split(",");
-        for (ss = 0; ss < 3; ss++) {
-          if (verificaStar[ss] == "1") {
-            cardAtualStar.children[ss].classList.add("starok");
-          }
-        }
-      }
+	var auxStar = 0;
+	for (lvl in verJson) {
+		var cardAtualStar = nameE("estrelinhas")[auxStar];
+		var verificaStar = verJson[lvl].split(',')
+		for(ss = 0;ss<3;ss++){
+				if(verificaStar[ss] == "1"){
+				cardAtualStar.children[ss].classList.add("starok");
+				}
+			}
+		auxStar++;
+	}
     </script>
 
     <script
